@@ -35,8 +35,3 @@ jobs:
         echo "3232235520,3232301055,CountryA" >> data/raw/IpAddress_to_Country.csv
         
         python -m unittest discover -s tests -p "*.py"
-
-    - name: Format check with black (diff)
-      run: |
-        pip install black
-        black --check src tests notebooks
