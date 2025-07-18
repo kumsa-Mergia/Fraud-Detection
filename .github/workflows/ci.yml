@@ -24,6 +24,16 @@ jobs:
 
     - name: Run tests
       run: |
+        mkdir -p data/raw data/processed
+        echo "ip_address,class,purchase_value,signup_time,purchase_time,user_id" > data/raw/Fraud_Data.csv
+        echo "192.168.0.1,0,100,2020-01-01 10:00:00,2020-01-01 11:00:00,1" >> data/raw/Fraud_Data.csv
+
+        echo "Time,Amount,Class" > data/raw/creditcard.csv
+        echo "1,100,0" >> data/raw/creditcard.csv
+
+        echo "lower_bound_ip_address,upper_bound_ip_address,country" > data/raw/IpAddress_to_Country.csv
+        echo "3232235520,3232301055,CountryA" >> data/raw/IpAddress_to_Country.csv
+        
         python -m unittest discover -s tests -p "*.py"
 
     - name: Lint with flake8
