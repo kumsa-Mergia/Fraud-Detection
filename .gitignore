@@ -1,0 +1,82 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Environments
+.env
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Python virtual environment files
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Pytest cache
+.pytest_cache/
+
+# MyPy, Pyre, Pytype
+.mypy_cache/
+.pyre/
+.pytype/
+
+# Coverage reports
+htmlcov/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+
+# Jupyter Notebook metadata
+*.nbconvert.ipynb
+
+# Data files
+*.csv
+*.tsv
+*.zip
+*.gz
+*.h5
+*.parquet
+*.pkl
+*.joblib
+*.db
+
+# Logs
+*.log
+
+# macOS system files
+.DS_Store
+
+# VS Code settings
+.vscode/
+
+# Model artifacts
+models/
+*.sav
+*.pt
+*.pth
+*.onnx
+*.pb
+
+# Temporary files
+*.tmp
+*.bak
+*.swp
+*~
+
+# Ignore outputs from IPython
+*.out
+
+# Ignore SHAP plots and large explainer dumps (if any)
+*.shap
+*.html
