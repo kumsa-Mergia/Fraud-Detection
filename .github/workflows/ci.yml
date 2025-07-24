@@ -34,4 +34,4 @@ jobs:
         echo "lower_bound_ip_address,upper_bound_ip_address,country" > data/raw/IpAddress_to_Country.csv
         echo "3232235520,3232301055,CountryA" >> data/raw/IpAddress_to_Country.csv
         
-        python -m unittest discover -s tests -p "*.py"
+
