@@ -61,7 +61,7 @@ coverage.xml
 .vscode/
 
 # Model artifacts
-models/
+model/
 *.sav
 *.pt
 *.pth
