@@ -4,16 +4,12 @@ import unittest
 import pandas as pd
 from faker import Faker
 
-
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
-
 
 from src.data_preprocessing.preprocessing_pipeline import DataPreprocessor
 
 
 class TestDataPreprocessor(unittest.TestCase):
-
-
     def setUp(self):
         # Initialize Faker instance
         fake = Faker()
@@ -50,7 +46,6 @@ class TestDataPreprocessor(unittest.TestCase):
         self.processor.fraud_df = self.fraud_df
         self.processor.credit_df = self.credit_df
         self.processor.ip_country_df = self.ip_country_df
-
 
     def test_load_data(self):
         # Just test loading data runs without error
