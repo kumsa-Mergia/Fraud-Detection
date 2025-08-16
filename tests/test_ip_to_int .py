@@ -1,10 +1,11 @@
-import unittest
-import sys
 import os
+import sys
+import unittest
 
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.data_preprocessing.preprocessing_pipeline import DataPreprocessor
+
 
 class TestIPConversion(unittest.TestCase):
 
@@ -12,9 +13,7 @@ class TestIPConversion(unittest.TestCase):
         # We just need to instantiate the class with dummy paths because
         # we're only testing ip_to_int here.
         self.processor = DataPreprocessor(
-            fraud_path="dummy.csv",
-            credit_path="dummy.csv",
-            ip_country_path="dummy.csv"
+            fraud_path="dummy.csv", credit_path="dummy.csv", ip_country_path="dummy.csv"
         )
 
     def test_ip_to_int(self):
@@ -27,6 +26,7 @@ class TestIPConversion(unittest.TestCase):
         ip = "not.an.ip"
         result = self.processor.ip_to_int(ip)
         self.assertTrue(result != result)  # NaN check: NaN != NaN
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,11 +1,12 @@
-import unittest
-import sys
 import os
+import sys
+import unittest
 
 # Add project root so import works
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 from src.data_preprocessing.preprocessing_pipeline import DataPreprocessor
+
 
 class TestDataPreprocessor(unittest.TestCase):
 
@@ -13,7 +14,7 @@ class TestDataPreprocessor(unittest.TestCase):
         self.processor = DataPreprocessor(
             "data/raw/Fraud_Data.csv",
             "data/raw/creditcard.csv",
-            "data/raw/IpAddress_to_Country.csv"
+            "data/raw/IpAddress_to_Country.csv",
         )
 
     def test_load_data(self):
@@ -22,6 +23,7 @@ class TestDataPreprocessor(unittest.TestCase):
         self.assertIsNotNone(self.processor.fraud_df)
         self.assertIsNotNone(self.processor.credit_df)
         self.assertIsNotNone(self.processor.ip_country_df)
+
 
 if __name__ == "__main__":
     unittest.main()

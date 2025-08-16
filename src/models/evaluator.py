@@ -1,5 +1,7 @@
-from sklearn.metrics import average_precision_score, f1_score, confusion_matrix, classification_report, precision_recall_curve
 import matplotlib.pyplot as plt
+from sklearn.metrics import (average_precision_score, classification_report,
+                             confusion_matrix, f1_score,
+                             precision_recall_curve)
 
 
 class Evaluator:
