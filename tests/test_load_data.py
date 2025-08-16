@@ -13,6 +13,7 @@ from src.data_preprocessing.preprocessing_pipeline import DataPreprocessor
 
 class TestDataPreprocessor(unittest.TestCase):
 
+
     def setUp(self):
         # Initialize Faker instance
         fake = Faker()
@@ -50,12 +51,14 @@ class TestDataPreprocessor(unittest.TestCase):
         self.processor.credit_df = self.credit_df
         self.processor.ip_country_df = self.ip_country_df
 
+
     def test_load_data(self):
         # Just test loading data runs without error
         self.processor.load_data()
         self.assertIsNotNone(self.processor.fraud_df)
         self.assertIsNotNone(self.processor.credit_df)
         self.assertIsNotNone(self.processor.ip_country_df)
+
 
 if __name__ == "__main__":
     unittest.main()
