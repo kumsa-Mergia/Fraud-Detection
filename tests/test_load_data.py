@@ -4,10 +4,12 @@ import unittest
 import pandas as pd
 from faker import Faker
 
-# Add project root so import works
+
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
+
 from src.data_preprocessing.preprocessing_pipeline import DataPreprocessor
+
 
 class TestDataPreprocessor(unittest.TestCase):
 
