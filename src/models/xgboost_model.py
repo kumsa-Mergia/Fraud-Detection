@@ -18,8 +18,8 @@ class XGBoostModel:
 
         # Instantiate the model here so scale_pos_weight is dynamic
         self.model = XGBClassifier(
-            objective='binary:logistic',
-            eval_metric='logloss',
+            objective="binary:logistic",
+            eval_metric="logloss",
             n_estimators=200,
             learning_rate=0.1,
             max_depth=5,

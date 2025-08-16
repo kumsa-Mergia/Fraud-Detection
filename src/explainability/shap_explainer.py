@@ -1,5 +1,6 @@
-import shap
 import matplotlib.pyplot as plt
+import shap
+
 
 class SHAPExplainer:
     def __init__(self, model, X_train, X_test, model_type="tree"):
@@ -17,7 +18,7 @@ class SHAPExplainer:
             self.explainer = shap.LinearExplainer(self.model, self.X_train)
         else:
             self.explainer = shap.Explainer(self.model, self.X_train)
-        
+
         self.shap_values = self.explainer(self.X_test)
         return self.shap_values
 

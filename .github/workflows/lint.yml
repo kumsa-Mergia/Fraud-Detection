@@ -1,0 +1,27 @@
+name: Lint
+
+on:
+  pull_request:
+    branches: [main]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.12'
+
+      - name: Install flake8‑github‑annotations
+        run: pip install flake8-github-annotations
+
+      - name: Lint with Flake8 annotations
+        uses: py-actions/flake8@v2
+        with:
+          ignore: "F401"
+          exclude: "src/data_preprocessing/preprocessing_pipeline.py,src/explainability/shap_explainer.py,tests"
+          max-line-length: "120"
+          args: "--format github"

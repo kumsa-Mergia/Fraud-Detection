@@ -1,15 +1,16 @@
+import os
+import sys
 import unittest
+
 import numpy as np
 from sklearn.datasets import make_classification
 
-import sys
-import os
-
 # Add project root so import works
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
 
 from src.models.logistic_model import LogisticModel  # adjust path if needed
+
 
 class TestLogisticModel(unittest.TestCase):
     def setUp(self):
@@ -20,7 +21,7 @@ class TestLogisticModel(unittest.TestCase):
             n_informative=5,
             n_redundant=2,
             n_classes=2,
-            random_state=42
+            random_state=42,
         )
         self.model = LogisticModel()
 
@@ -45,5 +46,6 @@ class TestLogisticModel(unittest.TestCase):
         self.assertTrue(np.all((probabilities >= 0) & (probabilities <= 1)))
         self.assertEqual(probabilities.shape, self.y.shape)
 
-if __name__ == '__main__':
+
+if __name__ == "__main__":
     unittest.main()

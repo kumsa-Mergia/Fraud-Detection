@@ -1,0 +1,7 @@
+[flake8]
+max-line-length = 100
+extend-ignore = F401
+per-file-ignores =
+    src/data_preprocessing/preprocessing_pipeline.py: E722,E501
+    src/explainability/shap_explainer.py: F401,E501
+    tests/*: E402,E501
