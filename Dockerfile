@@ -1,19 +1,13 @@
-FROM node:18-alpine AS build
+    FROM python:3.9-slim-buster
 
-WORKDIR /app
+    WORKDIR /
 
-COPY package*.json ./
+    # Copy the requirements file and install dependencies
+    COPY requirements.txt .
+    RUN pip install -r requirements.txt
 
-RUN npm install
+    # Copy the application code into the container
+    COPY . .
 
-COPY . .
-
-RUN npm run dev
-
-FROM nginx:alpine
-
-COPY --from=build /app/dist /usr/share/nginx/html
-
-EXPOSE 80
-
-CMD ["nginx", "-g", "daemon off;"]
+    # Expose the port your application listens on (if applicable)
+    EXPOSE 8000
